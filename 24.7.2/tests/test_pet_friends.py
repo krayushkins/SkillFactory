@@ -1,7 +1,8 @@
 from api import PetFriends
-from settings import valid_email, valid_password
-import pytest
+from settings import *
 from datetime import datetime
+import pytest
+import os
 
 pf = PetFriends()
 
@@ -29,26 +30,26 @@ def test_get_api_key_for_valid_user(email=valid_email, password=valid_password):
     assert 'key' in result, 'Нет ключа в ответе'
 
 
-# def test_get_api_key_for_invalid_email(email=invalid_email, password=valid_password):
-#     """ Проверяем что запрос api ключа возвращает статус 403 при невалидном email"""
-#
-#     # Отправляем запрос и сохраняем полученный ответ с кодом статуса в status, а текст ответа в result
-#     status, result = pf.get_api_key(email, password)
-#
-#     # Сверяем полученные данные с нашими ожиданиями
-#     assert status == 403, f'Статус код - {status}'
-#     assert 'key' not in result, 'Есть ключ в ответе'
-#
-#
-# def test_get_api_key_for_invalid_password(email=valid_email, password=invalid_password):
-#     """ Проверяем что запрос api ключа возвращает статус 403 при невалидном пароле"""
-#
-#     # Отправляем запрос и сохраняем полученный ответ с кодом статуса в status, а текст ответа в result
-#     status, result = pf.get_api_key(email, password)
-#
-#     # Сверяем полученные данные с нашими ожиданиями
-#     assert status == 403, f'Статус код - {status}'
-#     assert 'key' not in result, 'Есть ключ в ответе'
+def test_get_api_key_for_invalid_email(email=invalid_email, password=valid_password):
+    """ Проверяем что запрос api ключа возвращает статус 403 при невалидном email"""
+
+    # Отправляем запрос и сохраняем полученный ответ с кодом статуса в status, а текст ответа в result
+    status, result = pf.get_api_key(email, password)
+
+    # Сверяем полученные данные с нашими ожиданиями
+    assert status == 403, f'Статус код - {status}'
+    assert 'key' not in result, 'Есть ключ в ответе'
+
+
+def test_get_api_key_for_invalid_password(email=valid_email, password=invalid_password):
+    """ Проверяем что запрос api ключа возвращает статус 403 при невалидном пароле"""
+
+    # Отправляем запрос и сохраняем полученный ответ с кодом статуса в status, а текст ответа в result
+    status, result = pf.get_api_key(email, password)
+
+    # Сверяем полученные данные с нашими ожиданиями
+    assert status == 403, f'Статус код - {status}'
+    assert 'key' not in result, 'Есть ключ в ответе'
 
 
 def test_get_all_pets_with_valid_key(filter=''):
