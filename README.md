@@ -1,2 +1,2 @@
 # SkillFactory
-Выполненные задания от skillfactory
+Выполненные задания от skillfactory (QAP)
