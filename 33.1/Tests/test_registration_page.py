@@ -1,5 +1,3 @@
-# python -m pytest -v --driver Firefox --driver-path "Путь до драйвера"geckodriver.exe test_registration_page.py
-
 from test_login_page import valid_email
 from test_login_page import valid_password
 from test_login_page import time_page
@@ -48,11 +46,6 @@ def test_register_with_data_email(selenium):
     search_button = selenium.find_element(By.NAME, 'register')
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Возникает ошибка "TypeError: 'str' object is not callable", поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.CLASS_NAME, 'card-container__title').text()
-    # assert search_text == 'Подтверждение email'
-
 
 # test 2
 def test_mask_password_button(selenium):
@@ -81,7 +74,7 @@ def test_mask_password_button(selenium):
     search_button = selenium.find_element(By.XPATH,
                                           '//*[@id="page-right"]/div/div/div/form/div[4]/div[2]/div/div[2]').click()
 
-    # В качестве проверки делаем скрин
+    # Делаем скрин
     selenium.save_screenshot('test_mask_password_button.png')
 
 
@@ -101,11 +94,6 @@ def test_button_in_body_user_agreement(selenium):
     search_button = selenium.find_element(By.CSS_SELECTOR, 'div.auth-policy > a.rt-link.rt-link--orange').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # К сожалению не смог зацепиться за текст, поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 4
 def test_button_in_footer_privacy_policy(selenium):
@@ -122,11 +110,6 @@ def test_button_in_footer_privacy_policy(selenium):
     # Жмем кнопку.
     search_button = selenium.find_element(By.XPATH, '//*[@id="rt-footer-agreement-link"]/span[1]').click()
     time.sleep(small_time)
-
-    # Проверяем, что мы на нужной странице
-    # К сожалению не смог зацепиться за текст, поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
 
 
 # test 5
@@ -145,11 +128,6 @@ def test_button_in_footer_user_agreement(selenium):
     search_button = selenium.find_element(By.XPATH, '//*[@id="rt-footer-agreement-link"]/span[2]').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # К сожалению не смог зацепиться за текст, поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 6
 def test_button_in_footer_user_agreement(selenium):
@@ -163,9 +141,5 @@ def test_button_in_footer_user_agreement(selenium):
     search_button = selenium.find_element(By.ID, 'cookies-tip-open').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Возникает ошибка "TypeError: 'str' object is not callable", поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="rt-tooltip__title"]').text()
-    # assert search_text == 'Мы используем Cookie»'
-    # В качестве проверки делаем скрин
+    # Делаем скрин
     selenium.save_screenshot('test_button_in_footer_user_agreement.png')
