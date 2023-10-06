@@ -18,8 +18,7 @@ time_page = 7
 small_time = 1
 
 
-# Примечание:
-# спользуется модуль time.sleep
+# Примечание: спользуется модуль time.sleep
 
 # test 1.
 def test_login_with_valid_data_number(selenium):
