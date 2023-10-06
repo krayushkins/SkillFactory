@@ -12,3 +12,5 @@
 Тест-кейсы: https://drive.google.com/drive/folders/1nhnMO2AlePxU-0It-2zHr0ny7df5Q3iF?usp=drive_link
 
 Баг-репорты: https://drive.google.com/drive/folders/18nr0Gm54zL6911y75PofkfIif895g_Ee?usp=drive_link
+
+Используется: Python3 (библиотеки: PyTest , PyTest - Selenium).
