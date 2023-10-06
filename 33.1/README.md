@@ -13,4 +13,6 @@
 
 - Баг-репорты: https://drive.google.com/drive/folders/18nr0Gm54zL6911y75PofkfIif895g_Ee?usp=drive_link
 
+- Тесты: [Tests](https://github.com/krayushkins/SkillFactory/tree/main/33.1/Tests)
+
 Используется: Python3 (библиотеки: PyTest , PyTest - Selenium)
