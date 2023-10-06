@@ -1,10 +1,8 @@
-# python -m pytest -v --driver Firefox --driver-path "Путь до драйвера"geckodriver.exe test_login_page.py
-
 import time
 from selenium.webdriver.common.by import By
 
 login_page = 'https://b2c.passport.rt.ru/auth/realms/b2c/protocol/openid-connect/auth?client_id=account_b2c&redirect_uri=https://b2c.passport.rt.ru/account_b2c/login&response_type=code&scope=openid&state=149e4875-32e6-491e-bccb-1e01cb086a56&theme&auth_type'
-# Данные взяты самостоятельно.
+# Данные взяты самостоятельно
 valid_number = '9123456789'
 valid_email = 'User@y.ru'
 valid_login = 'User123'
@@ -21,9 +19,7 @@ small_time = 1
 
 
 # Примечание:
-# Тесты могут завсать из-за капчи. Прописать любые данные в поля логина и пароля, ввести капчу.
-# При использовании гибких ожиданий по типу presence_of_element_located, тесты ломаются, поэтому используется модуль time.sleep
-# В проверках assert, где требуется проверить "Неправильный логин или пароль" из-за наличия капчи тест ломается.
+# спользуется модуль time.sleep
 
 # test 1.
 def test_login_with_valid_data_number(selenium):
@@ -44,12 +40,6 @@ def test_login_with_valid_data_number(selenium):
 
     # жмем кнопку "Войти"
     search_button = selenium.find_element(By.ID, 'kc-login').click()
-
-    # Проверяем, что попали на необходимую страницу
-    # Предпологаю, что при попадании в личный кабинет мы находим любой элемент, в данном случае заголовок с текстом
-    # "Личный кабинет" и id == title, и проверяем, что дейтсвительно попали на необходмую нам страницу.
-    # search_input = selenium.find_element(By.ID, 'title').text()
-    # assert search_input == 'личный кабинет'
 
 
 # test 2
@@ -102,12 +92,6 @@ def test_login_with_valid_data_email(selenium):
 
     # жмем кнопку "Войти"
     search_button = selenium.find_element(By.ID, 'kc-login').click()
-
-    # Проверяем, что попали на необходимую страницу
-    # Предпологаю, что при попадании в личный кабинет мы находим любой элемент, в данном случае заголовок с текстом
-    # "Личный кабинет" и id == title, и проверяем, что дейтсвительно попали на необходмую нам страницу.
-    # search_input = selenium.find_element(By.ID, 'title').text
-    # assert search_input == 'личный кабинет'
 
 
 # test 4
@@ -164,12 +148,6 @@ def test_login_with_valid_data_login(selenium):
     # жмем кнопку "Войти"
     search_button = selenium.find_element(By.ID, 'kc-login').click()
 
-    # Проверяем, что попали на необходимую страницу
-    # Предпологаю, что при попадании в личный кабинет мы находим любой элемент, в данном случае заголовок с текстом
-    # "Личный кабинет" и id == title, и проверяем, что дейтсвительно попали на необходмую нам страницу.
-    # search_input = selenium.find_element(By.ID, 'title').text()
-    # assert search_input == 'личный кабинет'
-
 
 # test 6
 def test_login_with_no_valid_data_login(selenium):
@@ -223,12 +201,6 @@ def test_login_with_valid_data_ls(selenium):
     # жмем кнопку "Войти"
     search_button = selenium.find_element(By.ID, 'kc-login').click()
 
-    # Проверяем, что попали на необходимую страницу
-    # Предпологаю, что при попадании в личный кабинет мы находим любой элемент, в данном случае заголовок с текстом
-    # "Личный кабинет" и id == title, и проверяем, что дейтсвительно попали на необходмую нам страницу.
-    # search_input = selenium.find_element(By.ID, 'title').text()
-    # assert search_input == 'личный кабинет'
-
 
 # test 8
 def test_login_with_no_valid_data_ls(selenium):
@@ -274,11 +246,6 @@ def test_button_in_body_user_agreement(selenium):
 
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Данная проверка на данный момент не работает. Может быть в будущем разберусь.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 10
 def test_button_in_body_register(selenium):
@@ -292,11 +259,6 @@ def test_button_in_body_register(selenium):
     search_button = selenium.find_element(By.ID, 'kc-register').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Возникает ошибка "TypeError: 'str' object is not callable", поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.CLASS_NAME, 'card-container__title').text()
-    # assert search_text == 'Авторизация'
-
 
 # test 11
 def test_button_in_body_forgot_password(selenium):
@@ -309,11 +271,6 @@ def test_button_in_body_forgot_password(selenium):
     # Жмем кнопку
     search_button = selenium.find_element(By.ID, 'forgot_password').click()
     time.sleep(small_time)
-
-    # Проверяем, что мы на нужной странице
-    # Возникает ошибка "TypeError: 'str' object is not callable", поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.CLASS_NAME, 'card-container__title').text()
-    # assert search_text == 'Восстановление пароля'
 
 
 # test 12
@@ -329,11 +286,6 @@ def test_button_in_footer_privacy_policy(selenium):
 
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    #Проверка на данный момент не работает. Может быть в будущем разберусь.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 13
 def test_button_in_footer_user_agreement(selenium):
@@ -348,11 +300,6 @@ def test_button_in_footer_user_agreement(selenium):
 
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 14
 def test_button_in_footer_user_agreement(selenium):
@@ -362,13 +309,9 @@ def test_button_in_footer_user_agreement(selenium):
     selenium.get(login_page)
     time.sleep(time_page)
 
-    # Жмем кнопку.
+    # Жмем кнопку
     search_button = selenium.find_element(By.ID, 'cookies-tip-open').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Возникает ошибка "TypeError: 'str' object is not callable", поэтому данная проверка на данный момент не работает. Может быть в будущем разберусь.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="rt-tooltip__title"]').text()
-    # assert search_text == 'Мы используем Cookie»'
-    # В качестве проверки делаем скрин
+    # Делаем скрин
     selenium.save_screenshot('test_button_in_footer_user_agreement.png')
