@@ -7,7 +7,7 @@
 
 Требования: [Требования SSO для тестирования](https://github.com/krayushkins/SkillFactory/blob/main/33.1/Требования_SSO_для_тестирования.pdf), [Требования Skillfactory](https://github.com/krayushkins/SkillFactory/blob/main/33.1/Требования_Skillfactory.pdf)
 
-Тест-план: 
+Тест-план: [Тест-план Ростелеком](https://github.com/krayushkins/SkillFactory/blob/main/33.1/Тест-план_Ростелеком.pdf)
 
 Тест-кейсы: 
 
