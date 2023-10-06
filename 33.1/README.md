@@ -9,6 +9,6 @@
 
 Тест-план: [Тест-план Ростелеком](https://github.com/krayushkins/SkillFactory/blob/main/33.1/Тест-план_Ростелеком.pdf)
 
-Тест-кейсы: 
+Тест-кейсы: https://drive.google.com/drive/folders/1nhnMO2AlePxU-0It-2zHr0ny7df5Q3iF?usp=drive_link
 
-Баг-репорты: 
+Баг-репорты: https://drive.google.com/drive/folders/18nr0Gm54zL6911y75PofkfIif895g_Ee?usp=drive_link
