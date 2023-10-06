@@ -1,5 +1,3 @@
-# python -m pytest -v --driver Firefox --driver-path "Путь до драйвера"geckodriver.exe test_password_recovery_page.py
-
 from test_login_page import valid_number
 from test_login_page import valid_email
 from test_login_page import valid_login
@@ -32,9 +30,6 @@ def test_recovery_number(selenium):
     search_button = selenium.find_element(By.ID, 'reset')
     time.sleep(time_page)
 
-    # Тут должна быть проверка, что мы попадаем на страницу ввода кода из сообщения.
-    # code
-
 
 # test 2
 def test_recovery_email(selenium):
@@ -58,9 +53,6 @@ def test_recovery_email(selenium):
     # Жмем кнопку "Продолжить"
     search_button = selenium.find_element(By.ID, 'reset')
     time.sleep(time_page)
-
-    # Тут должна быть проверка, что мы попадаем на страницу ввода кода из сообщения.
-    # code
 
 
 # test 3
@@ -86,9 +78,6 @@ def test_recovery_login(selenium):
     search_button = selenium.find_element(By.ID, 'reset')
     time.sleep(time_page)
 
-    # Тут должна быть проверка, что мы попадаем на страницу ввода кода из сообщения.
-    # code
-
 
 # test 4
 def test_recovery_ls(selenium):
@@ -112,9 +101,6 @@ def test_recovery_ls(selenium):
     # Жмем кнопку "Продолжить"
     search_button = selenium.find_element(By.ID, 'reset')
     time.sleep(time_page)
-
-    # Тут должна быть проверка, что мы попадаем на страницу ввода кода из сообщения.
-    # code
 
 
 # test 5
@@ -153,11 +139,6 @@ def test_button_in_footer_privacy_policy(selenium):
     search_button = selenium.find_element(By.XPATH, '//*[@id="rt-footer-agreement-link"]/span[1]').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # К сожалению не смог зацепиться за текст, поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 7
 def test_button_in_footer_user_agreement(selenium):
@@ -175,11 +156,6 @@ def test_button_in_footer_user_agreement(selenium):
     search_button = selenium.find_element(By.XPATH, '//*[@id="rt-footer-agreement-link"]/span[2]').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # К сожалению не смог зацепиться за текст, поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="offer-title"]/text()').text()
-    # assert search_text == 'Публичная оферта о заключении Пользовательского соглашения на использование Сервиса «Ростелеком ID»'
-
 
 # test 8
 def test_button_in_footer_user_agreement(selenium):
@@ -193,9 +169,5 @@ def test_button_in_footer_user_agreement(selenium):
     search_button = selenium.find_element(By.ID, 'cookies-tip-open').click()
     time.sleep(small_time)
 
-    # Проверяем, что мы на нужной странице
-    # Возникает ошибка "TypeError: 'str' object is not callable", поэтому данная проверка на данный момент не работает. Может быть в будущем пофиксю.
-    # search_text = selenium.find_element(By.XPATH, '//*[@class="rt-tooltip__title"]').text()
-    # assert search_text == 'Мы используем Cookie»'
-    # В качестве проверки делаем скрин
+    # Делаем скрин
     selenium.save_screenshot('test_button_in_footer_user_agreement.png')
